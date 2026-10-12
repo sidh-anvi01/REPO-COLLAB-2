@@ -140,6 +140,50 @@
         .gallery-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 2px 0; }
         .gallery-meta strong { font-size: 14px; }
         .gallery-meta span { color: var(--muted); font-size: 11px; }
+
+        .insights-section { padding: 0 0 54px; }
+        .section-kicker {
+            display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px;
+            color: #5d6d5e; font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+        }
+        .section-kicker::before {
+            content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--green-dark);
+        }
+        .insights-header { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 24px; }
+        .insights-header h3 { margin: 0; font-size: clamp(30px, 4vw, 48px); letter-spacing: -2.2px; line-height: 1; }
+        .insights-header p { max-width: 420px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+        .stat-card {
+            padding: 22px 20px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.6);
+            box-shadow: 0 12px 24px rgba(19, 31, 19, .03);
+        }
+        .stat-card strong { display: block; font-size: clamp(30px, 3vw, 42px); letter-spacing: -2px; }
+        .stat-card span { display: block; margin-top: 8px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+        .stories-section { padding: 0 0 88px; }
+        .story-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+        .story-card {
+            padding: 22px 20px; border: 1px solid var(--line); border-radius: 18px; background: linear-gradient(180deg, rgba(255,255,255,.8), rgba(247,249,243,.7));
+        }
+        .story-stars { color: #d78b22; letter-spacing: 3px; font-size: 12px; }
+        .story-card p { margin: 16px 0 18px; color: var(--ink); font-size: 15px; line-height: 1.7; }
+        .story-author { display: flex; align-items: center; gap: 12px; }
+        .story-avatar {
+            width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: #dfeec0; color: var(--ink);
+            font-size: 11px; font-weight: 800;
+        }
+        .story-author strong { display: block; font-size: 13px; }
+        .story-author span { color: var(--muted); font-size: 11px; }
+
+        .cta-band { padding: 0 0 42px; }
+        .cta-banner {
+            display: flex; align-items: center; justify-content: space-between; gap: 18px;
+            padding: 30px 28px; border: 1px solid rgba(23, 37, 30, .06); border-radius: 24px; background: linear-gradient(135deg, #f4f7e8 0%, #edf3dc 100%);
+            box-shadow: 0 22px 42px rgba(32, 53, 36, .08);
+        }
+        .cta-banner h3 { margin: 10px 0 0; font-size: clamp(28px, 3vw, 38px); letter-spacing: -1.7px; }
+        .section-kicker.alt { margin-bottom: 0; }
+        .cta-actions { display: flex; align-items: center; gap: 14px; }
+
         .footer { padding: 0 0 24px; color: #819087; font-size: 11px; text-align: center; }
 
         @media (min-width: 1200px) { .hero { padding-top: 88px; padding-bottom: 82px; } }
@@ -201,6 +245,7 @@
             <div class="nav-links" id="nav-links">
                 <a href="#features">Features</a>
                 <a href="#how-it-works">How it works</a>
+                <a href="#insights">Insights</a>
                 <a href="#gallery">Gallery</a>
             </div>
             <div class="nav-actions">
@@ -340,6 +385,88 @@
                     </div>
                     <div class="gallery-meta"><strong>Sunday Market</strong><span>Campaign</span></div>
                 </article>
+            </div>
+        </section>
+
+        <section class="insights-section container" id="insights" aria-label="Orbit insights and metrics">
+            <div class="section-kicker">Built for momentum</div>
+            <div class="insights-header">
+                <h3>Keep ideas moving without the chaos.</h3>
+                <p>Orbit brings planning, communication, and everyday execution into one calm space so teams can spend less time chasing updates and more time shipping work.</p>
+            </div>
+            <div class="stats-grid" aria-label="Orbit performance stats">
+                <article class="stat-card">
+                    <strong>3x</strong>
+                    <span>Faster weekly planning cycles for busy product teams.</span>
+                </article>
+                <article class="stat-card">
+                    <strong>82%</strong>
+                    <span>Of updates clear with one shared source of truth.</span>
+                </article>
+                <article class="stat-card">
+                    <strong>12k+</strong>
+                    <span>Teams using Orbit to move from ideas to action.</span>
+                </article>
+                <article class="stat-card">
+                    <strong>4.9/5</strong>
+                    <span>Average satisfaction on ease of work and clarity.</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="stories-section container" id="testimonials" aria-labelledby="testimonials-title">
+            <div class="section-kicker">Customer stories</div>
+            <div class="insights-header">
+                <h3 id="testimonials-title">Teams feel more in control.</h3>
+                <p>Leaders across design, product, and operations use Orbit to align faster, reduce friction, and keep momentum visible to everyone.</p>
+            </div>
+            <div class="story-grid">
+                <article class="story-card">
+                    <div class="story-stars" aria-label="Five star review">★★★★★</div>
+                    <p>"Orbit turned our weekly chaos into a simple rhythm. We have fewer check-ins and more traction on the work that actually matters."</p>
+                    <div class="story-author">
+                        <span class="story-avatar" aria-hidden="true">AM</span>
+                        <div>
+                            <strong>Amanda Moss</strong>
+                            <span>Product Lead</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="story-card">
+                    <div class="story-stars" aria-label="Five star review">★★★★★</div>
+                    <p>"The clarity is immediate. We can see competing priorities, launch progress, and team ownership without digging through threads."</p>
+                    <div class="story-author">
+                        <span class="story-avatar" aria-hidden="true">JT</span>
+                        <div>
+                            <strong>Jonah Tran</strong>
+                            <span>Operations Director</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="story-card">
+                    <div class="story-stars" aria-label="Five star review">★★★★★</div>
+                    <p>"The onboarding was effortless and the value showed up fast. Our team feels aligned on goals and our planning is dramatically smoother."</p>
+                    <div class="story-author">
+                        <span class="story-avatar" aria-hidden="true">SN</span>
+                        <div>
+                            <strong>Sara Nguyen</strong>
+                            <span>Marketing Manager</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="cta-band container" id="signup" aria-label="Start using Orbit today">
+            <div class="cta-banner">
+                <div>
+                    <div class="section-kicker alt">Ready to begin?</div>
+                    <h3>Make room for your next big win.</h3>
+                </div>
+                <div class="cta-actions">
+                    <a class="button" href="#get-started">Start free</a>
+                    <a class="button button-light" href="#features">Explore features</a>
+                </div>
             </div>
         </section>
     </main>
